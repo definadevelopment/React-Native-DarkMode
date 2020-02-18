@@ -5,14 +5,14 @@ import { DynamicStyleSheet, DynamicValue, useDynamicStyleSheet } from 'react-nat
 export default class SignIn extends Component {
     render() {
         return (
-            <DarkTheme/>
+            <DarkTheme navigation={this.props.navigation}/>
         )
     }
 }
 
-function DarkTheme() {
+function DarkTheme({ navigation }) {
     const styles = useDynamicStyleSheet(dynamicStyles)
- 
+
     return (
         <View style={styles.container}>
             <View style={styles.logoView}>
@@ -23,7 +23,7 @@ function DarkTheme() {
                 <TextInput placeholder='Password' style={[styles.textInput, {marginTop: 16}]}/>
             </View>
             <View style={styles.buttonView}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                     <Text style={{color: 'white'}}>Get Started</Text>
                 </TouchableOpacity>
             </View>
