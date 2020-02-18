@@ -8,6 +8,7 @@ React native dark mode sample using this component
 
 ## Test
 >npm install
+
 >npx react-native run-ios
 
 
